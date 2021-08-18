@@ -1,23 +1,19 @@
 #include "udf.h"
 
-
 /*
-    Function to check if the current case is a single phase or a
-    multi-phase setup.
-    In case it is a multi-phase simulation, also outputs the number of
-    fluid phases.
+    Function to check if the current case is a single phase or a multi-phase setup.
+    In case it is a multi-phase simulation, also outputs the number of fluid phases.
     
-    Here I am using the `sg_mphase` enum variable to check the multi-
-    phase option for the case. Besides this variable I could also have
-    used the `cxboolean` variables: `mp_vof`, `mp_drift`, and
-    `mp_mfluid` for VOF, mixture and Eulerian, respectively.
+    Here I am using the `sg_mphase` enum variable to check the multi-phase option for
+    the case. Besides this variable I could also have used the `cxboolean` variables:
+    `mp_vof`, `mp_drift`, and `mp_mfluid` for VOF, mixture and Eulerian, respectively.
 */
 DEFINE_ON_DEMAND(get_number_phases)
 {
     Domain * domain = Get_Domain(ROOT_DOMAIN_ID);
-    Thread * thread = NULL;
     
-    switch (sg_mphase) {
+    switch (sg_mphase)
+    {
         case MP_OFF:
             Message0("\n...Single-phase setup!\n");
             break;

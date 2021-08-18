@@ -1,0 +1,14 @@
+{
+    "C_Cpp.dimInactiveRegions": true,
+    "cSpell.words": [
+        "NNODES",
+        "cxboolean",
+        "cxindex",
+        "mfluid",
+        "mphase",
+        "myid"
+    ],
+    "files.associations": {
+        "udf.h": "c"
+    }
+}
